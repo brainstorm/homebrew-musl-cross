@@ -15,6 +15,12 @@ class MuslCross < Formula
   depends_on "gnu-sed" => :build
   depends_on "make" => :build
 
+  bottle do
+    root_url "https://dl.bintray.com/brainstorm/bottles-musl-cross"
+    cellar :any_skip_relocation
+    sha256 "da15de354918c91750148c342dfcc2eb09080716b0917bb5ab92de7786aee035" => :catalina
+  end
+
   resource "linux-4.19.88.tar.xz" do
     url "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.19.88.tar.xz"
     sha256 "c1923b6bd166e6dd07be860c15f59e8273aaa8692bc2a1fce1d31b826b9b3fbe"

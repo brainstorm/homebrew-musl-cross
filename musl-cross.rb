@@ -4,6 +4,13 @@ class MuslCross < Formula
   url "https://github.com/richfelker/musl-cross-make/archive/v0.9.9.tar.gz"
   sha256 "ff3e2188626e4e55eddcefef4ee0aa5a8ffb490e3124850589bcaf4dd60f5f04"
   head "https://github.com/richfelker/musl-cross-make.git"
+  
+  bottle do
+    root_url "https://dl.bintray.com/brainstorm/bottles-musl-cross"
+    cellar :any_skip_relocation
+    sha256 "da15de354918c91750148c342dfcc2eb09080716b0917bb5ab92de7786aee035" => :catalina
+    sha256 "f77506f1ede87d886e51416db8f2409b1ea06841a1b69720e9d0011b32ddba6e" => :mojave
+  end 
 
   option "with-aarch64", "Build cross-compilers targeting arm-linux-muslaarch64"
   option "with-arm-hf", "Build cross-compilers targeting arm-linux-musleabihf"
@@ -14,12 +21,6 @@ class MuslCross < Formula
 
   depends_on "gnu-sed" => :build
   depends_on "make" => :build
-
-  bottle do
-    root_url "https://dl.bintray.com/brainstorm/bottles-musl-cross"
-    cellar :any_skip_relocation
-    sha256 "da15de354918c91750148c342dfcc2eb09080716b0917bb5ab92de7786aee035" => :catalina
-  end
 
   resource "linux-4.19.88.tar.xz" do
     url "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.19.88.tar.xz"
